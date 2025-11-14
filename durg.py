@@ -7,36 +7,26 @@ import pandas as pd
 # -----------------------
 # Configuration
 # -----------------------
-st.set_page_config(page_title="Durga Automobile", layout="wide")
-SHOWROOM_NAME = "Durga Automobile"
+st.set_page_config(page_title="𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼", layout="wide")
+SHOWROOM_NAME = "𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼"
 BACKGROUND_PATH = r"C:\Users\dsaby\OneDrive\Desktop\har.webp"  # change if you move the file
 
-# -----------------------
-# Helper: set background image from a local file (embedded as base64)
-# -----------------------
-def set_background(local_img_path: str):
-    img_path = Path(local_img_path)
-    if not img_path.exists():
-        st.warning(f"Background image not found at {local_img_path}. Remove or fix the path in the script.")
-        return
-    with open(img_path, "rb") as f:
-        data = base64.b64encode(f.read()).decode()
-    css = f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/webp;base64,{data}");
-        background-size: cover;
-        background-attachment: fixed;
-    }}
-    .card {{
-        background: rgba(255,255,255,0.85);
-        padding: 16px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }}
-    </style>
+import streamlit as st
+from PIL import Image
+
+st.set_page_config(layout="wide")
+
+# Load your logo
+logo = Image.open("durga_logo.png")   # put your logo image in same folder
+st.image(logo, width=350)
+
+# Or center it:
+st.markdown(
     """
-    st.markdown(css, unsafe_allow_html=True)
+    <div style='text-align:center;'>
+        <img src='durga_logo.png' width='350'>
+    </div>
+    """, unsafe_allow_html=True)
 
 # -----------------------
 # Layout / Navigation
@@ -141,4 +131,3 @@ elif page == "Contact":
 # Footer
 # -----------------------
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<small>Built with ❤️ for farmers — edit the Python file to customize models, prices, images and contact details.</small>", unsafe_allow_html=True)
