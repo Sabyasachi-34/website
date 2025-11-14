@@ -9,24 +9,6 @@ import pandas as pd
 # -----------------------
 st.set_page_config(page_title="𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼", layout="wide")
 SHOWROOM_NAME = "𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼"
-BACKGROUND_PATH = r"C:\Users\dsaby\OneDrive\Desktop\har.webp"  # change if you move the file
-
-import streamlit as st
-from PIL import Image
-
-st.set_page_config(layout="wide")
-
-# Load your logo
-logo = Image.open("durga_logo.png")   # put your logo image in same folder
-st.image(logo, width=350)
-
-# Or center it:
-st.markdown(
-    """
-    <div style='text-align:center;'>
-        <img src='durga_logo.png' width='350'>
-    </div>
-    """, unsafe_allow_html=True)
 
 # -----------------------
 # Layout / Navigation
@@ -131,3 +113,4 @@ elif page == "Contact":
 # Footer
 # -----------------------
 st.markdown("<hr>", unsafe_allow_html=True)
+
