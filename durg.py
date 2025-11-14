@@ -7,8 +7,8 @@ import pandas as pd
 # -----------------------
 # Configuration
 # -----------------------
-st.set_page_config(page_title="𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼", layout="wide")
-SHOWROOM_NAME = "𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼"
+st.set_page_config(page_title="𝐃𝐔𝐑𝐆𝐀 𝐀𝐔𝐓𝐎𝐌𝐎𝐁𝐈𝐋𝐄", layout="wide")
+SHOWROOM_NAME = "𝐃𝐔𝐑𝐆𝐀 𝐀𝐔𝐓𝐎𝐌𝐎𝐁𝐈𝐋𝐄"
 
 # -----------------------
 # Layout / Navigation
@@ -113,5 +113,6 @@ elif page == "Contact":
 # Footer
 # -----------------------
 st.markdown("<hr>", unsafe_allow_html=True)
+
 
 
