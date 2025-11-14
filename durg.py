@@ -13,7 +13,7 @@ SHOWROOM_NAME = "𝔻𝕌ℝ𝔾𝔸 𝔸𝕌𝕋𝕆𝕄𝕆𝔹𝕀𝕃𝔼"
 # -----------------------
 # Layout / Navigation
 # -----------------------
-set_background(BACKGROUND_PATH)
+
 
 st.markdown("<div class='card'>", unsafe_allow_html=True)
 col1, col2 = st.columns([3,1])
@@ -113,4 +113,5 @@ elif page == "Contact":
 # Footer
 # -----------------------
 st.markdown("<hr>", unsafe_allow_html=True)
+
 
