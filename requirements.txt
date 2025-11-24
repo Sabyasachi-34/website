@@ -2,3 +2,4 @@ streamlit
 gTTS
 Pillow
 SpeechRecognition
+audio-recorder-streamlit
