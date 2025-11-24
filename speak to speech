@@ -1,0 +1,145 @@
+import streamlit as st
+import os
+from gtts import gTTS
+import speech_recognition as sr
+from audio_recorder_streamlit import audio_recorder
+from io import BytesIO
+import tempfile
+
+# Page Config
+st.set_page_config(
+    page_title="WhisperWave",
+    page_icon="🤖",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
+
+# Custom CSS for accessibility and styling
+st.markdown("""
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .stTextArea textarea {
+        font-size: 1.2rem !important;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .stButton button {
+        font-size: 1.1rem !important;
+        padding: 0.5rem 2rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .stButton button:hover {
+        background-color: #45a049;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+def text_to_speech(text, lang='en', slow=False):
+    """Converts text to speech using gTTS and returns audio bytes."""
+    try:
+        tts = gTTS(text=text, lang=lang, slow=slow)
+        fp = BytesIO()
+        tts.write_to_fp(fp)
+        fp.seek(0)
+        return fp
+    except Exception as e:
+        st.error(f"Error generating audio: {e}")
+        return None
+
+def speech_to_text(audio_file):
+    """Transcribes audio file using SpeechRecognition."""
+    r = sr.Recognizer()
+    try:
+        with sr.AudioFile(audio_file) as source:
+            audio_data = r.record(source)
+            text = r.recognize_google(audio_data)
+            return text
+    except sr.UnknownValueError:
+        return "Could not understand audio."
+    except sr.RequestError as e:
+        return f"Could not request results; {e}"
+    except Exception as e:
+        return f"Error: {e}"
+
+# --- Main App ---
+st.title("WhisperWave 🎧")
+st.markdown("### Convert Text to Speech & Speech to Text")
+
+# Sidebar Settings
+with st.sidebar:
+    st.header("Settings")
+    lang_options = {'English': 'en', 'Hindi': 'hi', 'Spanish': 'es', 'French': 'fr', 'German': 'de'}
+    selected_lang_label = st.selectbox("Output Language", list(lang_options.keys()))
+    selected_lang_code = lang_options[selected_lang_label]
+    
+    speech_rate = st.slider("Speech Rate", 0.5, 2.0, 1.0, help="Adjust the speed of playback (Note: gTTS only supports Normal/Slow, this slider simulates speed for other engines if added)")
+    slow_audio = st.checkbox("Slow Mode (gTTS)", value=False)
+
+# Tabs
+tab1, tab2 = st.tabs(["📝 Text to Speech", "🎤 Speech to Text"])
+
+# --- Tab 1: Text to Speech ---
+with tab1:
+    st.header("Text to Speech")
+    text_input = st.text_area("Enter text here:", height=200, placeholder="Type something to hear it...")
+    
+    c1, c2 = st.columns([1, 2])
+    with c1:
+        if st.button("Convert to Audio", type="primary"):
+            if text_input:
+                with st.spinner("Generating audio..."):
+                    audio_fp = text_to_speech(text_input, lang=selected_lang_code, slow=slow_audio)
+                    if audio_fp:
+                        st.audio(audio_fp, format='audio/mp3')
+                        st.download_button(
+                            label="Download Audio",
+                            data=audio_fp,
+                            file_name="speech.mp3",
+                            mime="audio/mp3"
+                        )
+            else:
+                st.warning("Please enter some text first.")
+
+# --- Tab 2: Speech to Text ---
+with tab2:
+    st.header("Speech to Text")
+    
+    st.subheader("Upload Audio")
+    uploaded_file = st.file_uploader("Upload an audio file (WAV)", type=["wav"])
+    
+    if uploaded_file is not None:
+        st.audio(uploaded_file)
+        if st.button("Transcribe Uploaded Audio"):
+            with st.spinner("Transcribing..."):
+                text = speech_to_text(uploaded_file)
+                st.success("Transcription:")
+                st.text_area("Result", value=text, height=150)
+                
+    st.divider()
+    
+    st.subheader("Record Audio")
+    audio_bytes = audio_recorder(text="Click to Record", recording_color="#e8b62c", neutral_color="#6aa36f", icon_size="2x")
+    
+    if audio_bytes:
+        st.audio(audio_bytes, format="audio/wav")
+        if st.button("Transcribe Recording"):
+            # Save to temp file for processing
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as fp:
+                fp.write(audio_bytes)
+                fp.close()
+                
+                with st.spinner("Transcribing..."):
+                    text = speech_to_text(fp.name)
+                    st.success("Transcription:")
+                    st.text_area("Result (Recording)", value=text, height=150)
+                
+                # Cleanup
+                os.unlink(fp.name)
+
+st.markdown("---")
+st.caption("Built by Sabya")
