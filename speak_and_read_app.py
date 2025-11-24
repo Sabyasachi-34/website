@@ -1,3 +1,5 @@
+pip install gTTS
+
 import streamlit as st
 import os
 from gtts import gTTS
@@ -143,3 +145,4 @@ with tab2:
 
 st.markdown("---")
 st.caption("Built by Sabya")
+
