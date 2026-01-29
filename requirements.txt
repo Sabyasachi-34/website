@@ -6,3 +6,5 @@ SpeechRecognition
 audio-recorder-streamlit
 matplotlib
 seaborn
+mtranslate
+
