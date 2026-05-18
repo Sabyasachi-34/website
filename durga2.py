@@ -116,10 +116,10 @@ input {
 
 products = [
     {
-        "Model": "Plough P-50",
+        "Model": "AW70GV",
         "Type": "Plough",
-        "Price": "₹45,000",
-        "Stock": 10,
+        "Price": "₹27,00,000",
+        "subsidy": 40%,
         "Image": "https://www.yanmar.com/media/news/2019/12/13054632/img_index_0111.jpg"
     },
     {
@@ -390,7 +390,7 @@ elif page == "About":
     """, unsafe_allow_html=True)
 
     st.write("📍 Remuna Golei, Balasore, Odisha")
-    st.write("📍 Baripada Branch Available")
+    st.write("📍 Near Dargadahi golei, Baripada")
 
 # --------------------------------------------------
 # CONTACT PAGE
@@ -404,14 +404,14 @@ elif page == "Contact":
     <div class='card'>
     <h3>Get In Touch</h3>
     <p>📍 Remuna Golei, Balasore, Odisha</p>
-    <p>📞 +91 9876543210</p>
-    <p>📧 info@durgaautomobile.com</p>
+    <p>📞 +91 7008490069</p>
+    <p>📧 durgaautomobile6@gmail.com</p>
     </div>
     """, unsafe_allow_html=True)
 
     st.write("### 💬 Direct WhatsApp")
 
-    whatsapp_url = "https://wa.me/919876543210"
+    whatsapp_url = "https://wa.me/9438756540"
 
     st.markdown(
         f"""
