@@ -120,21 +120,21 @@ products = [
         "Type": "Plough",
         "Price": "₹45,000",
         "Stock": 10,
-        "Image": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9"
+        "Image": "https://www.yanmar.com/media/news/2019/12/13054632/img_index_0111.jpg"
     },
     {
         "Model": "Seeder S-120",
         "Type": "Seeder",
         "Price": "₹1,20,000",
         "Stock": 5,
-        "Image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854"
+        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ANhpLGRy7CFVOYDS3GCCOTC_VErgwzTFAQ&s"
     },
     {
         "Model": "Cultivator C-80",
         "Type": "Cultivator",
         "Price": "₹85,000",
         "Stock": 4,
-        "Image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399"
+        "Image": "https://www.yanmar.com/media/news/2019/12/13061653/img_index_028.jpg"
     }
 ]
 
