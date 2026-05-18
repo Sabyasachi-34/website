@@ -119,21 +119,19 @@ products = [
         "Model": "AW70GV",
         "Type": "Plough",
         "Price": "₹27,00,000",
-        "stock": 10,
+        "subsidy": "40%",
         "Image": "https://www.yanmar.com/media/news/2019/12/13054632/img_index_0111.jpg"
     },
     {
         "Model": "Seeder S-120",
         "Type": "Seeder",
         "Price": "₹1,20,000",
-        "stock": 10,
         "Image": "https://i.ytimg.com/vi/yDK3Ddpcou4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAqN96wh18FoO62lQbcqKapJRXLKQ"
     },
     {
         "Model": "Cultivator C-80",
         "Type": "Cultivator",
         "Price": "₹85,000",
-        "stock": 10,
         "Image": "https://www.yanmar.com/media/news/2019/12/13061653/img_index_028.jpg"
     }
 ]
@@ -236,7 +234,6 @@ if page == "Home":
 
             st.write(f"**Type:** {product['Type']}")
             st.write(f"**Price:** {product['Price']}")
-            st.write(f"**Stock Available:** {product['Stock']}")
 
             if st.button(f"🚀 Enquire Now - {product['Model']}"):
                 st.success(f"Thank you for showing interest in {product['Model']}")
