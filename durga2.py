@@ -438,7 +438,7 @@ current_year = datetime.now().year
 st.markdown(
     f"""
     <div class='footer'>
-    © {current_year} DURGA AUTOMOBILE | Designed by Sabyasachi 🚜
+    © {current_year} DURGA AUTOMOBILE | Designed by deVSabya 🚜
     </div>
     """,
     unsafe_allow_html=True
