@@ -127,7 +127,7 @@ products = [
         "Type": "Seeder",
         "Price": "₹1,20,000",
         "Stock": 5,
-        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ANhpLGRy7CFVOYDS3GCCOTC_VErgwzTFAQ&s"
+        "Image": "https://i.ytimg.com/vi/yDK3Ddpcou4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAqN96wh18FoO62lQbcqKapJRXLKQ"
     },
     {
         "Model": "Cultivator C-80",
