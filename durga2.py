@@ -119,21 +119,21 @@ products = [
         "Model": "AW70GV",
         "Type": "Plough",
         "Price": "₹27,00,000",
-        "subsidy": "40%",
+        "stock": 10,
         "Image": "https://www.yanmar.com/media/news/2019/12/13054632/img_index_0111.jpg"
     },
     {
         "Model": "Seeder S-120",
         "Type": "Seeder",
         "Price": "₹1,20,000",
-        "subsidy": "40%",
+        "stock": 10,
         "Image": "https://i.ytimg.com/vi/yDK3Ddpcou4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAqN96wh18FoO62lQbcqKapJRXLKQ"
     },
     {
         "Model": "Cultivator C-80",
         "Type": "Cultivator",
         "Price": "₹85,000",
-        "subsidy": "40%",
+        "stock": 10,
         "Image": "https://www.yanmar.com/media/news/2019/12/13061653/img_index_028.jpg"
     }
 ]
