@@ -126,12 +126,14 @@ products = [
         "Model": "Seeder S-120",
         "Type": "Seeder",
         "Price": "₹1,20,000",
+        "subsidy": "40%",
         "Image": "https://i.ytimg.com/vi/yDK3Ddpcou4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAqN96wh18FoO62lQbcqKapJRXLKQ"
     },
     {
         "Model": "Cultivator C-80",
         "Type": "Cultivator",
         "Price": "₹85,000",
+        "subsidy": "40%",
         "Image": "https://www.yanmar.com/media/news/2019/12/13061653/img_index_028.jpg"
     }
 ]
