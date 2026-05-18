@@ -119,7 +119,7 @@ products = [
         "Model": "AW70GV",
         "Type": "Plough",
         "Price": "₹27,00,000",
-        "subsidy": 40%,
+        "subsidy": "40%",
         "Image": "https://www.yanmar.com/media/news/2019/12/13054632/img_index_0111.jpg"
     },
     {
