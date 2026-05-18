@@ -271,10 +271,10 @@ if page == "Home":
     c1, c2, c3, c4 = st.columns(4)
 
     metrics = [
-        ("500+", "Happy Farmers"),
-        ("50+", "Machines Sold"),
+        ("1000+", "Happy Farmers"),
+        ("500+", "Machines Sold"),
         ("24x7", "Support"),
-        ("10+", "Years Experience")
+        ("8+", "Years Experience")
     ]
 
     for col, metric in zip([c1, c2, c3, c4], metrics):
